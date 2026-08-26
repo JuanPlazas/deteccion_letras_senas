@@ -17,6 +17,11 @@ deteccion_letras_senas/
 ├── models/                     # Auto-downloaded model files
 ├── scripts/
 │   └── capture_data.py         # Step 1: capture landmark sequences (.npy)
+├── training/
+│   ├── config.py               # Training hyper-parameters and paths
+│   ├── data_loader.py          # Load, split and standardize sequences
+│   ├── model.py                # LSTM architecture (Keras)
+│   └── train.py                # Training loop + MLflow tracking
 ├── utils/
 │   ├── config.py               # Shared constants and paths
 │   └── hands_detector.py       # MediaPipe HandLandmarker wrapper
@@ -64,6 +69,22 @@ Keys during capture:
 - **'Q'** — quit.
 
 The MediaPipe HandLandmarker model is downloaded automatically to `models/hand_landmarker.task` on first run.
+
+### Step 2 — Train the LSTM
+
+```bash
+uv run python -m training.train
+```
+
+The training script automatically discovers which letters exist in `data/sequences/`, builds a two-layer LSTM, trains with early stopping and learning-rate reduction, and logs everything to MLflow.
+
+**Callbacks:** `EarlyStopping` (patience 15, restores best weights), `ReduceLROnPlateau` (factor 0.5, patience 5).
+
+**MLflow:** each run registers params, per-epoch metrics (`train/*`, `val/*`), test metrics, the Keras model, the fitted `StandardScaler` and a `label_map.json`. View the UI with:
+
+```bash
+uv run mlflow ui --backend-store-uri sqlite:///training/mlflow.db
+```
 
 ## Development
 

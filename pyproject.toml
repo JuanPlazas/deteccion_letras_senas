@@ -6,7 +6,10 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "mediapipe>=1.0.0",
+    "mlflow>=2.12",
     "numpy",
+    "scikit-learn>=1.4",
+    "tensorflow>=2.16",
 ]
 
 [build-system]
@@ -39,4 +42,4 @@ select = ["E", "F", "I", "UP", "W", "B"]
 ignore = ["E501"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["utils", "scripts"]
+known-first-party = ["utils", "scripts", "training"]
