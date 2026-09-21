@@ -20,7 +20,7 @@ El proyecto cubre el pipeline completo:
 
 ---
 
-## Estado del proyecto (qué quedó listo)
+## Estado del proyecto
 
 ### Dataset público
 
