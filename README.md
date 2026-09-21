@@ -1,5 +1,15 @@
 # Detección de Letras en Lengua de Señas Colombiana (LSC)
 
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow%202.21-FF6F00?logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV%205.0-5C3EE8?logo=opencv&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-09B3AF?logo=google&logoColor=white)
+![MLflow](https://img.shields.io/badge/MLflow-0194E2?logo=mlflow&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikit-learn&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white)
+![uv](https://img.shields.io/badge/uv-DE5FE9?logo=uv&logoColor=white)
+
 Sistema de **detección y transcripción en tiempo real** de las letras del alfabeto dactilológico de la Lengua de Señas Colombiana (LSC), desarrollado como proyecto de portafolio.
 
 El proyecto cubre el pipeline completo:
